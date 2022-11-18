@@ -3,28 +3,47 @@
   <head>
     <meta charset="UTF-8">
     <title>4th Down Analysis, a personal project by Nicholas Quigley</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
   </head>
   <body>
-	<section id="intro">
-		<p>"Hey, to be honest with you, I thought we needed to go for it." -Mike Mcarthy</p>
-		<p>On Sunday, January 11, 2004, the Indianapolis Colts faced off against the Kansas City Chiefs in what has been remembered as one of the most impressive offensive displays in NFL history. Pro-bowler Trent Green, quarterback for the Chiefs, was having a phenomenal year, throwing for over 4000 yards, with a 2:1 touchdown-to-interception ratio. His counterpart for the Colts was first-team All-Pro Peyton Manning, coming off a wildcard victory against the Denver Broncos, in which Manning passed for five touchdowns. </p>
-		<p>The meeting was as explosive as one would expect, with both teams scoring over 30 points. It was also interesting for another reason; there were no punts by either team. Of the eight 4th down situations, there were three Field Goals, three Passes, one failed rush, and a penalty that gave a first down. It was the only time in NFL post-season history, before or since, that this has happened. The Colts ended up beating the Chiefs in a score of 38 to 31, before losing themselves to the future Super Bowl XXXVIII champions, the New England Patriots. </p>
-		<p>The game was incredible, but it was also expected. Two great teams made some great plays. The only times they went for it on 4th down were either very sensible decisions, or desperation plays. But what of the unexpected fourth down plays? What of the times in which it was neither sensible or necessary to roll the dice? What of the plays fueled only by a confidence in the team and the bravery to call terrible plans?</p>
-		<p>To this end, I have ranked every single 4th down play where they went for it in the 21st century by how... err... 'brave' you could passively-aggressively call them. The results compiled represent an interesting set of observations based on a completely arbitrary scaling system designed to express my excitement. They should be in no way taken as mathematically rigorous or entirely truthful.</p>
-	</section>
+	  <header>
+		<section id="intro-quotes">
+		  <p>"Hey, to be honest with you, I thought we needed to go for it." -Mike McCarthy</p>
+		</section>
+	  </header>
+	<div class="introContainer">
+		<img src="images/ManningThingy.jpg" alt="Peyton Manning throwing a ball.">
+		<section id="intro">
+			<br>
+			<br>
+			<p>On Sunday, January 11, 2004, the Indianapolis Colts faced off against the Kansas City Chiefs in what has been remembered as one of the most impressive offensive displays in NFL history. Pro-bowler Trent Green, quarterback for the Chiefs, was having a phenomenal year, throwing for over 4000 yards, with a 2:1 touchdown-to-interception ratio. His counterpart for the Colts was first-team All-Pro Peyton Manning, coming off a wildcard victory against the Denver Broncos, in which Manning passed for five touchdowns. </p>
+			<p>The meeting was as explosive as one would expect, with both teams scoring over 30 points. It was also interesting for another reason; there were no punts by either team. Of the eight 4th down situations, there were three Field Goals, three Passes, one failed rush, and a penalty that gave a first down. It was the only time in NFL post-season history, before or since, that this has happened. The Colts ended up beating the Chiefs in a score of 38 to 31, before losing themselves to the future Super Bowl XXXVIII champions, the New England Patriots. </p>
+			<p>The game was incredible, but it was also expected. Two great teams made some great plays. The only times they went for it on 4th down were either very sensible decisions, or desperation plays. But what of the unexpected fourth down plays? What of the times in which it was neither sensible or necessary to roll the dice? What of the plays fueled only by a confidence in the team and the bravery to call terrible plans?</p>
+			<p>To this end, I have ranked every single 4th down play where they went for it in the 21st century by how '<em>brave</em>' you could passively-aggressively call them. The results compiled represent an interesting set of observations based on a completely arbitrary scaling system designed to express my excitement. They should be in no way taken as mathematically rigorous or entirely truthful.</p>
+		</section>
+	</div>
 	<section id="justification">
 		<p>To start, I'd like to thank Sports Reference for their incredibly vast repository of football data (and excellent UX) which made this project possible, as well as Jon Bois, whose excellent video,<a href="https://www.youtube.com/watch?v=F9H9LwGmc-0" title="The excellent Jon Bois piece that inspired this work."> <em>The search for the saddest punt in the world.</em></a> inspired this project.</p>
 		<p>In this video, Mr. Bois ranks the punts made in the 21st century by combining several factors, such as score, quarter, field position and the yardage they need, into a single number through an arbitary arithmatetic function. I've done something very similar, but in a far more optimistic light.</p>
-		<p>The Bravery Index of Fourth-down Football, or BIFF, is a simple mathmatical model. Firstly, it takes the yards the team needs to advance the ball in order to move the chains, then finds the triple of the natural log of this number plus one. Alternatively, 3 * ln(1+ytg).</p>
-		<p>This gives the formula a concrete number to start with. I used the natural log to gain a curve of diminishing returns, to represent that a 4th and 1 situation is much different than a 4th and 5, but a 4th and 20 and a 4th and 25 are considerably less different.</p>
+		<p>The Bravery Index of Fourth-down Football, or BIFF, is a simple mathmatical model. Firstly, it takes the yards the team needs to advance the ball in order to move the chains, then finds the triple of the natural log of this number plus one. This gives the formula a concrete number to start with. I used the natural log to gain a curve of diminishing returns, to represent that a 4th and 1 situation is much different than a 4th and 5, but a 4th and 20 and a 4th and 25 are considerably less different..</p>
 		<p>The BIFF then takes the field position of the team and converts that to a sinoidal curve that peaks around each endzone, representing how I think it's more exciting when a team goes for it further from the center of the field, in which there are no obvious answers on what should be done. The BIFF number is multiplied by the value of the curve at the the team's position. </p>
 		<p>Next, the time remaining in the game (inclusive of a single overtime) is taken and put through a decreasing linear function that starts at 210 and goes down to 0 by 70 minutes. This helps sink desperation calls compared to truly brave plays, that are going to happen earlier in the game rather than later.</p>
 		<p>The final step of the BIFF index is to give the number a multiplier based on the score differential.</p>
-		<p>If the team is losing by more than 7, it's probably a desperation play, so it recieves a x1 multiplier.</p>
-		<p>If the team is losing by less than a touchdown, but more than field goal, this increases to x1.5.</p>
-		<p>If the team is losing by less than a field goal, then commendations must be made, and the multiplier is x2.</p>
-		<p>Should the teams be tied when one decides to go for it, that impressive disregard for caution awards the highest multiplier of x2.5. </p>
-		<p>Past this point, the multiplier decreases. First to x1.5 if you're within a field goal, then to x0.75 if it's less than a touchdown, and finally all the way down to x0.2 for games the team is winning by more than 7 points, as this is a play with no stakes.</p>
+		<ul>
+		  <li>If the team is losing by more than 7, it's probably a desperation play, so it recieves a x1 multiplier.</li>
+		  <li>If the team is losing by less than a touchdown, but more than field goal, this increases to x1.5.</li>
+		  <li>If the team is losing by less than a field goal, then commendations must be made, and the multiplier is x2.</li>
+		  <li>Should the teams be tied when one decides to go for it, that impressive disregard for caution awards the highest multiplier of x2.5. </li>
+		  <li>Past this point, the multiplier decreases to x1.5 if you're within a field goal.</li>
+		  <li>It then goes to x0.75 if the game is being won, but by less than a touchdown. </li>
+		  <li>Finally, it goes all the way down to x0.2 for games the team is winning by more than 7 points, as this is a play with minimal stakes.</li>
+		</ul>
 	</section>
 	<section id="implementation">
 		<p>The BIFF, however, was just an equation, and I wanted to see dumb plays. After gathering up the data as a CSV file from<a href="https://stathead.com/football/play_finder.cgi" title="Stathead Football's Playfinder."> <em>Stathead Football's Playfinder</em></a>, I made a Python program to take in this file, clean and format it's data from strings into numbers, and spit out a BIFF number, which was then addended as a new column to the file. I then used a simple Bash script to remove a few anomolies, such as blocked kicks and muffed punts, that I did not want to pollute the dataset.</p>
