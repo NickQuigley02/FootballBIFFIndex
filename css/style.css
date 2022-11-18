@@ -40,6 +40,7 @@ body {
 }
 #justification{
   list-style: circle;
+  width: 60%;
   font-family: 'Roboto', cursive;
   font-size: 14px;
   text-align: left;
@@ -59,7 +60,7 @@ body {
 .topTenList{
   display: grid;
   grid-template-columns: [first] 33% [line2] 33% [line3] 33% [end];
-  grid-template-rows: 200px;
+  grid-template-rows: auto, auto, auto;
   margin: 60px;
   margin-top: 50px;
 }
@@ -68,7 +69,19 @@ body {
   grid-column-end: line3;
   border-radius: 25px;
   padding: 10px;
+  margin: 10px;
   background-color: #4C93DC;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+}
+.entryRight{
+  grid-column-start: line2;
+  grid-column-end: end;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #4C4D77;
   width: 100%;
   height: fit-content;
   display: inline-block;
