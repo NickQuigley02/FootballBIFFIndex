@@ -1,0 +1,79 @@
+ol, ul{
+  list-style: none;
+}
+strong{
+  font-weight: 700;
+}
+em{
+  font-style: italic;
+}
+body {
+  background-color: #4996aa;
+  color: #faf9f9;
+}
+#introContainer{
+  position:relative;
+}
+#intro{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 66%;
+  font-family: 'Roboto', cursive;
+  font-size: 18px;
+  color: #faf9f9;
+  text-align: left;
+  text-indent: 4%;
+  padding: 5%;
+}
+#intro-quotes{
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width:  100%;
+  float: left;
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 30px;
+  background-color: #1E142D;
+  color: #faf9f9;
+  text-align: center;
+}
+#justification{
+  list-style: circle;
+  font-family: 'Roboto', cursive;
+  font-size: 14px;
+  text-align: left;
+  text-indent: 4%;
+  padding: 5%;
+  font-style: bold;
+  color: #faf9f9;
+  text-align: left;
+}
+#entrySuperTitle{
+  font-family: 'Montserrat', sans-serif;
+}
+#entryTitle{
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 22px;
+}
+.topTenList{
+  display: grid;
+  grid-template-columns: [first] 33% [line2] 33% [line3] 33% [end];
+  grid-template-rows: 200px;
+  margin: 60px;
+  margin-top: 50px;
+}
+.entryLeft{
+  grid-column-start: first;
+  grid-column-end: line3;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #4C93DC;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+}
+img{
+	width:100%;
+	height:auto;
+}
