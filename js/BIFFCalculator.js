@@ -1,3 +1,13 @@
+var yardsField = document.getElementById('yardsField').value;
+var fieldPositionField = document.getElementById('fieldPositionField').value;
+var timeRemainingField = document.getElementById('timeRemainingField').value;
+var scoreDiffField = document.getElementById('scoreDiffField').value;
+const BIFFResults = document.getElementById('.BIFFResults');
+const x = document.getElementById("clickIt");
+
+
+x.addEventListener("click", RespondClick);
+
 function BIFFCalculator(yardsToGo, fieldPosition, timeRemaining, scoreDiff){
 	console.log('It works!');
 	//var yardsToGo = 10;
@@ -33,5 +43,9 @@ function BIFFCalculator(yardsToGo, fieldPosition, timeRemaining, scoreDiff){
 		BIFFIndex *= 0.2;
 	}
 	console.log(BIFFIndex);
-	return BIFFindex;
+	return String(BIFFIndex);
+}
+
+function RespondClick() {
+	document.getElementById("BIFFResults").innerHTML = BIFFCalculator(yardsField, fieldPositionField, timeRemainingField, scoreDiffField);
 }
