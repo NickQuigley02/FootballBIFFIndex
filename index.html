@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>4th Down Analysis, a personal project by Nicholas Quigley</title>
+	<script src="js/BIFFCalculator.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +32,7 @@
 	<section id="justification">
 		<p>To start, I'd like to thank Sports Reference for their incredibly vast repository of football data (and excellent UX) which made this project possible, as well as Jon Bois, whose excellent video,<a href="https://www.youtube.com/watch?v=F9H9LwGmc-0" title="The excellent Jon Bois piece that inspired this work."> <em>The search for the saddest punt in the world.</em></a> inspired this project.</p>
 		<p>In this video, Mr. Bois ranks the punts made in the 21st century by combining several factors, such as score, quarter, field position and the yardage they need, into a single number through an arbitary arithmatetic function. I've done something very similar, but in a far more optimistic light.</p>
-		<p>The Bravery Index of Fourth-down Football, or BIFF, is a simple mathmatical model. Firstly, it takes the yards the team needs to advance the ball in order to move the chains, then finds the triple of the natural log of this number plus one. This gives the formula a concrete number to start with. I used the natural log to gain a curve of diminishing returns, to represent that a 4th and 1 situation is much different than a 4th and 5, but a 4th and 20 and a 4th and 25 are considerably less different..</p>
+		<p>The Bravery Index of Fourth-down Football, or BIFF, is a simple mathmatical model. Firstly, it takes the yards the team needs to advance the ball in order to move the chains, then finds the triple of the natural log of this number plus one. This gives the formula a concrete number to start with. I used the natural log to gain a curve of diminishing returns, to represent that a 4th and 1 situation is much different than a 4th and 5, but a 4th and 20 and a 4th and 25 are considerably less different.</p>
 		<p>The BIFF then takes the field position of the team and converts that to a sinoidal curve that peaks around each endzone, representing how I think it's more exciting when a team goes for it further from the center of the field, in which there are no obvious answers on what should be done. The BIFF number is multiplied by the value of the curve at the the team's position. </p>
 		<p>Next, the time remaining in the game (inclusive of a single overtime) is taken and put through a decreasing linear function that starts at 210 and goes down to 0 by 70 minutes. This helps sink desperation calls compared to truly brave plays, that are going to happen earlier in the game rather than later.</p>
 		<p>The final step of the BIFF index is to give the number a multiplier based on the score differential.</p>
@@ -44,7 +45,18 @@
 		  <li>It then goes to x0.75 if the game is being won, but by less than a touchdown. </li>
 		  <li>Finally, it goes all the way down to x0.2 for games the team is winning by more than 7 points, as this is a play with minimal stakes.</li>
 		</ul>
-	</section>
+	</section> 
+	<form action="js/BIFFCalculator.js">
+	  <label for="timeRemaining">timeRemaining:</label><br>
+  	  <input type="number" id="timeRemaining" name="timeRemaining"><br>
+	  <label for="scoreDiff">scoreDiff:</label><br>
+  	  <input type="number" id="scoreDiff" name="scoreDiff"><br>
+	  <label for="yardsToGo">yardsToGo:</label><br>
+  	  <input type="number" id="yardsToGo" name="yardsToGo"><br>
+	  <label for="fieldPosition">fieldPosition:</label><br>
+	  <input type="number" id="fieldPosition" name="fieldPosition"><br><br>
+	  <input type="submit" value="Submit">
+	</form> 
 	<section id="implementation">
 		<p>The BIFF, however, was just an equation, and I wanted to see dumb plays. After gathering up the data as a CSV file from<a href="https://stathead.com/football/play_finder.cgi" title="Stathead Football's Playfinder."> <em>Stathead Football's Playfinder</em></a>, I made a Python program to take in this file, clean and format it's data from strings into numbers, and spit out a BIFF number, which was then addended as a new column to the file. I then used a simple Bash script to remove a few anomolies, such as blocked kicks and muffed punts, that I did not want to pollute the dataset.</p>
 		<p>From that point on, all I had to do was bring this new dataset into Microsoft Excel and play around with it for graphs, trends and rankings to find my dumb/brave plays.</p>
