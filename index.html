@@ -28,6 +28,27 @@
 			<p>To this end, I have ranked every single 4th down play where they went for it in the 21st century by how '<em>brave</em>' you could passively-aggressively call them. The results compiled represent an interesting set of observations based on a completely arbitrary scaling system designed to express my excitement. They should be in no way taken as mathematically rigorous or entirely truthful.</p>
 		</section>
 	</div>
+	<div id="formContainer">
+	  <p><st>BIFF Index Calculator:</st></p>
+	  <div id="yardsEntry">
+	    <label for="yardsToGo">How many yards do they need to go?</label><br>
+  	    <input type="number" id="yardsField" name="yardsToGo"><br>
+	  </div>
+	  <div id="fieldPositionEntry">
+	    <label for="fieldPosition">How many yards are they away from their endzone?</label><br>
+	    <input type="number" id="fieldPositionField" name="fieldPosition"><br>
+	  </div>
+	  <div id="timeRemainingEntry">
+	    <label for="timeRemaining">How many Seconds remain in the game?</label><br>
+  	    <input type="number" id="timeRemainingField" name="timeRemaining"><br>
+	  </div>
+	  <div id="scoreDiffEntry">
+	    <label for="scoreDiff">What is the current score differential?</label><br>
+  	    <input type="number" id="scoreDiffField" name="scoreDiff"><br>
+	  </div>
+	  <button id="clickIt">Click here to compute BIFF index score!</button>
+	  <p id="BIFFResults">0</p>
+	</div> 
 	<section id="justification">
 		<p>To start, I'd like to thank Sports Reference for their incredibly vast repository of football data (and excellent UX) which made this project possible, as well as Jon Bois, whose excellent video,<a href="https://www.youtube.com/watch?v=F9H9LwGmc-0" title="The excellent Jon Bois piece that inspired this work."> <em>The search for the saddest punt in the world.</em></a> inspired this project.</p>
 		<p>In this video, Mr. Bois ranks the punts made in the 21st century by combining several factors, such as score, quarter, field position and the yardage they need, into a single number through an arbitary arithmatetic function. I've done something very similar, but in a far more optimistic light.</p>
@@ -45,26 +66,6 @@
 		  <li>Finally, it goes all the way down to x0.2 for games the team is winning by more than 7 points, as this is a play with minimal stakes.</li>
 		</ul>
 	</section> 
-	<div id="formContainer">
-	  <div id="yardsEntry">
-	    <label for="yardsToGo">yardsToGo:</label><br>
-  	    <input type="number" id="yardsField" name="yardsToGo"><br>
-	  </div>
-	  <div id="fieldPositionEntry">
-	    <label for="fieldPosition">fieldPosition:</label><br>
-	    <input type="number" id="fieldPositionField" name="fieldPosition"><br>
-	  </div>
-	  <div id="timeRemainingEntry">
-	    <label for="timeRemaining">timeRemaining:</label><br>
-  	    <input type="number" id="timeRemainingField" name="timeRemaining"><br>
-	  </div>
-	  <div id="scoreDiffEntry">
-	    <label for="scoreDiff">scoreDiff:</label><br>
-  	    <input type="number" id="scoreDiffField" name="scoreDiff"><br>
-	  </div>
-	  <button id="clickIt">Click here</button>
-	  <p id="BIFFResults">0</p>
-	</div> 
 	
 	
 	<script src="js/BIFFCalculator.js"></script>

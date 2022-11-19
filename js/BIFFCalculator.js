@@ -1,28 +1,46 @@
-var yardsField = document.getElementById('yardsField').value;
-var fieldPositionField = document.getElementById('fieldPositionField').value;
-var timeRemainingField = document.getElementById('timeRemainingField').value;
-var scoreDiffField = document.getElementById('scoreDiffField').value;
+
 const BIFFResults = document.getElementById('.BIFFResults');
 const x = document.getElementById("clickIt");
 
 
 x.addEventListener("click", RespondClick);
 
-function BIFFCalculator(yardsToGo, fieldPosition, timeRemaining, scoreDiff){
+function BIFFCalculator(){
+	var yardsToGo = parseInt(document.getElementById('yardsField').value);
+	var fieldPosition = parseInt(document.getElementById('fieldPositionField').value);
+	var timeRemaining = parseInt(document.getElementById('timeRemainingField').value);
+	var scoreDiff = parseInt(document.getElementById('scoreDiffField').value);
 	console.log('It works!');
 	//var yardsToGo = 10;
-	var BIFFIndex = Math.log(yardsToGo+1);
+	
+	console.log(yardsToGo);
+	console.log(Math.log(yardsToGo+1));
+	console.log(yardsToGo+1);
+	
+	console.log(fieldPosition);
+	
+	console.log(fieldPosition+1);
+	
+	console.log(timeRemaining);
+	
+	console.log(timeRemaining+1);
+	
+	console.log(scoreDiff);
+	
+	console.log(scoreDiff+1);
+	
+	var BIFFIndex = 3 * Math.log(yardsToGo+1);
 
 	console.log(BIFFIndex);
 
 	//var fieldPosition = 30;
-	BIFFIndex *= (11 + (Math.cos(fieldPosition/50 + Math.PI/2)));
+	BIFFIndex *= (11 + (Math.cos((fieldPosition/50) + (Math.PI/2))));
 
 	console.log(BIFFIndex);
 
 	//var timeRemaining = 3200;
 	BIFFIndex *= ((4200 - timeRemaining)/20);
-
+	console.log((4200 - timeRemaining)/20);
 	console.log(BIFFIndex);
 
 	//var scoreDiff = -3;
@@ -47,5 +65,5 @@ function BIFFCalculator(yardsToGo, fieldPosition, timeRemaining, scoreDiff){
 }
 
 function RespondClick() {
-	document.getElementById("BIFFResults").innerHTML = BIFFCalculator(yardsField, fieldPositionField, timeRemainingField, scoreDiffField);
+	document.getElementById("BIFFResults").innerHTML = BIFFCalculator();
 }
