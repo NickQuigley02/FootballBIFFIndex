@@ -1,5 +1,6 @@
 ol, ul{
-  list-style: none;
+  list-style: inside;
+  font-size: 80%;
 }
 strong{
   font-weight: 700;
@@ -10,6 +11,7 @@ em{
 body {
   background-color: #4996aa;
   color: #faf9f9;
+  list-style: inside;
 }
 #introContainer{
   position:relative;
@@ -42,10 +44,10 @@ body {
   list-style: circle;
   width: 60%;
   font-family: 'Roboto', cursive;
-  font-size: 14px;
+  font-size: 17px;
   text-align: left;
   text-indent: 4%;
-  padding: 5%;
+  padding: 4%;
   font-style: bold;
   color: #faf9f9;
   text-align: left;
@@ -59,30 +61,83 @@ body {
 }
 .topTenList{
   display: grid;
-  grid-template-columns: [first] 33% [line2] 33% [line3] 33% [end];
+  grid-template-columns: [first] 20% [line2] 20% [line3] 20% [line4] 20% [line5] 20% [end];
   grid-template-rows: auto, auto, auto;
-  margin: 60px;
-  margin-top: 50px;
+  gap: 10px;
+  padding: 60px;
+  padding-top: 50px;
 }
 .entryLeft{
   grid-column-start: first;
-  grid-column-end: line3;
+  grid-column-end: line4;
   border-radius: 25px;
   padding: 10px;
-  margin: 10px;
   background-color: #4C93DC;
-  width: 100%;
   height: fit-content;
   display: inline-block;
 }
+.calculationLeft{
+  display: inline;
+  grid-column-start: line4;
+  grid-column-end: line5;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #4C4D77;
+  display: inline-block;
+  font-size: 18px;  
+  text-align: center;
+}
+.calculationText{
+  display: inline;
+}
+.calculationNumber{
+  display: inline;
+  font-size: 150%;
+}
+.calculationResult{
+	
+  background-color: #faf9f9;
+  color: #1E142D;
+  font-size: 30px;
+  border-radius: 3px;
+}
+.graphicLeft{
+  grid-column-start: line5;
+  grid-column-end: end;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #4C93DC;
+  display: inline-block;
+}
 .entryRight{
-  grid-column-start: line2;
+  grid-column-start: line3;
   grid-column-end: end;
   border-radius: 25px;
   padding: 10px;
   margin: 10px;
   background-color: #4C4D77;
-  width: 100%;
+  height: fit-content;
+  display: inline-block;
+}
+.calculationRight{
+  grid-column-start: line2;
+  grid-column-end: line3;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #4C93DC;
+  height: fit-content;
+  display: inline-block;
+  text-align: center;
+}
+.graphicRight{
+  grid-column-start: first;
+  grid-column-end: line1;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #4C4D77;
   height: fit-content;
   display: inline-block;
 }
@@ -97,27 +152,22 @@ body {
   margin: 5%;
   margin-left: 1%;
   font-size: 25px;
-  /* other necessary CSS */ 
 }
 #yardsEntry { 
   display: grid; 
   font-size: 18px;
-  /* other necessary CSS */ 
 }
 #fieldPositionEntry { 
   display: grid; 
   font-size: 18px;
-  /* other necessary CSS */ 
 }
 #timeRemainingEntry { 
   display: grid; 
   font-size: 18px;
-  /* other necessary CSS */ 
 }
 #scoreDiffEntry { 
   display: grid; 
   font-size: 18px;
-  /* other necessary CSS */ 
 }
 #BIFFResults { 
   font-size: 20px;
@@ -126,7 +176,6 @@ body {
   padding: 5%;
   border-radius: 10px;
   color: #faf9f9;
-  /* other necessary CSS */ 
 }
 img{
 	width:100%;
